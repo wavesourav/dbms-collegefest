@@ -24,6 +24,8 @@ if (mysqli_num_rows($result) > 0) {
   
   <tr>
     <th>Name</th>
+    <th>Username</th>
+    <th>Password</th>
     <th>Phone</th>
     <th>Event</th>
     <th></th>
@@ -34,6 +36,8 @@ while($row = mysqli_fetch_array($result)) {
 ?>
 <tr>
     <td><?php echo $row["st_name"]; ?></td>
+    <td><?php echo $row["usn"]; ?></td>
+    <td><?php echo $row["password"]; ?></td>
     <td><?php echo $row["phone"]; ?></td>
     <td><?php echo $row["event_title"]; ?></td>
     <td> <?php echo '<a  href="updateStudent.php?id='.$row['event_id'].'" class = "btn btn-default"> Update</a>'?></td>

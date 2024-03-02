@@ -21,6 +21,10 @@
     <input type="text" name="st_name" required class="form-control"><br><br>
     <label>Student co-ordinator phone</label><br>
     <input type="text" name="phone" required class="form-control"><br><br>
+    <label>Student co-ordinator username</label><br>
+    <input type="text" name="usn" required class="form-control"><br><br>
+    <label>Student co-ordinator password</label><br>
+    <input type="text" name="pwd" required class="form-control"><br><br>
     <button type="submit" name="update" class = "btn btn-default ">Update</button>
     </div>
     </div>
@@ -39,7 +43,10 @@
  {
      $name=$_POST["st_name"];
      $phone=$_POST["phone"];
-     $sql="UPDATE student_coordinator set phone='$phone',st_name='$name' where sid='$id'";
+     $usn=$_POST["usn"];
+     $pwd=$_POST["pwd"];
+
+     $sql="UPDATE student_coordinator set phone='$phone',st_name='$name' ,usn= '$usn',password='$pwd' where sid='$id'";
      if($conn->query($sql)===true)
      {
         echo"<script>

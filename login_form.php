@@ -46,7 +46,10 @@ if (isset($_POST["update"]))
     $mypassword=$_POST['password'];
 
     $sql = "SELECT * FROM participent WHERE usn='$myusername' AND password='$mypassword'";
+    $sql1="SELECT * FROM student_coordinator WHERE usn='$myusername' AND password='$mypassword'";
     $result = $conn->query($sql);
+    $result1 = $conn->query($sql1);
+    
 
 
     if($mypassword=='admin' && $myusername=='admin')
@@ -63,7 +66,15 @@ elseif ($result->num_rows > 0) {
        
         </script>";
      
-    } else {
+    } 
+    elseif ($result1->num_rows > 0) {
+        echo "<script>
+         alert('Login Successfull');
+         window.location.href = 'organiser.php?usn=' + encodeURIComponent('$myusername');
+       
+        </script>";
+     
+    }else {
         echo "<script>
       
         alert('Invalid credentials');

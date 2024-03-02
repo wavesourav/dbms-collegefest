@@ -36,6 +36,7 @@ if (mysqli_num_rows($result) > 0) {
                         
                             <th>Time</th>
                             <th>location </th>
+                            <th>Result </th>
                           
                         </tr>
                     </thead>
@@ -54,6 +55,7 @@ if (mysqli_num_rows($result) > 0) {
                             echo '<td>'.$row['Date'].'</td>';
                             echo '<td>'.$row['time'].'</td>';
                             echo '<td>'.$row['location'].'</td>';
+                            echo '<td>'.$row['Result'].'</td>';
                             
                             echo '<td>'
                         
